@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handleliste — Lucas</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --border: #334155;
+    --accent: #4f6ef7;
+    --green: #86efac;
+    --green-bg: #052e16;
+    --green-border: #166534;
+    --orange: #fdba74;
+    --orange-bg: #1c1008;
+    --orange-border: #854d0e;
+    --purple: #c4b5fd;
+    --purple-bg: #1e1b4b;
+    --purple-border: #4c1d95;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 40px 24px; }
+  .container { max-width: 720px; margin: 0 auto; }
+
+  .header { margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+  h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .header p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  .section { margin-bottom: 28px; }
+  .section-card { border-radius: var(--radius); padding: 20px 24px; border: 1px solid var(--border); }
+  .weekly { background: var(--green-bg); border-color: var(--green-border); }
+  .biweekly { background: var(--orange-bg); border-color: var(--orange-border); }
+  .monthly { background: var(--purple-bg); border-color: var(--purple-border); }
+  .section-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .weekly .section-title { color: var(--green); }
+  .biweekly .section-title { color: var(--orange); }
+  .monthly .section-title { color: var(--purple); }
+  .section-sub { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+
+  .item { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px; }
+  .item:last-child { border-bottom: none; }
+  .item-name { color: var(--text); }
+  .item-amount { color: var(--muted); font-size: 13px; }
+
+  .note { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .note strong { color: var(--text); }
+
+  .footer { text-align: center; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="eyebrow">Handleplan · Basert på måltidsplanen</div>
+    <h1>Handleliste — hver lørdag</h1>
+    <p>Beregnet ut fra hvor mye du faktisk spiser per dag. Sjekk din egen hylle og kjøleskapsplass før du drar — kjøp bare det som er tomt eller nesten tomt.</p>
+  </div>
+
+  <div class="note">
+    <strong>Slik bruker du listen:</strong> Grønn = kjøp hver lørdag. Oransje = kjøp ca. annenhver lørdag. Lilla = kjøp ca. én gang i måneden. Første lørdag kjøper du alt (dyrest). Ukene etter er billigere fordi tørrvarer og honning fortsatt er fulle.
+  </div>
+
+  <!-- HVER UKE -->
+  <div class="section">
+    <div class="section-card weekly">
+      <div class="section-title">🟢 Hver lørdag — ferskvarer</div>
+      <div class="section-sub">Dette går fort tomt og må fylles ukentlig</div>
+      <div class="item"><span class="item-name">Kyllingfilet</span><span class="item-amount">1 kg</span></div>
+      <div class="item"><span class="item-name">Karbonadedeig</span><span class="item-amount">3 × 500g</span></div>
+      <div class="item"><span class="item-name">Laks</span><span class="item-amount">2 pakker (frys det du ikke bruker)</span></div>
+      <div class="item"><span class="item-name">Gresk yoghurt 10% (TINE)</span><span class="item-amount">4–5 × 500g</span></div>
+      <div class="item"><span class="item-name">Cottage cheese</span><span class="item-amount">2–3 × 400g</span></div>
+      <div class="item"><span class="item-name">Søtpotet</span><span class="item-amount">2 kg (~8 stk)</span></div>
+      <div class="item"><span class="item-name">Bananer</span><span class="item-amount">1 stor klase (~14 stk)</span></div>
+      <div class="item"><span class="item-name">Epler</span><span class="item-amount">7 stk</span></div>
+      <div class="item"><span class="item-name">Brokkoli / paprika / gulrot</span><span class="item-amount">blandet, ~1 av hver</span></div>
+      <div class="item"><span class="item-name">Havregryn</span><span class="item-amount">1 kg (holder ~1 uke)</span></div>
+    </div>
+  </div>
+
+  <!-- ANNENHVER UKE -->
+  <div class="section">
+    <div class="section-card biweekly">
+      <div class="section-title">🟠 Ca. annenhver lørdag</div>
+      <div class="section-sub">Varer lengre — sjekk om du har nok først</div>
+      <div class="item"><span class="item-name">Egg (gård, 60-pakke)</span><span class="item-amount">holder ~10–12 dager</span></div>
+      <div class="item"><span class="item-name">Frossen bær</span><span class="item-amount">1 kg pose (holder ~1,5 uke)</span></div>
+      <div class="item"><span class="item-name">Ris</span><span class="item-amount">1 kg pose (holder ~2 uker)</span></div>
+      <div class="item"><span class="item-name">Maiskaker</span><span class="item-amount">1 pakke</span></div>
+      <div class="item"><span class="item-name">Grovt brød</span><span class="item-amount">1 brød (frys halvparten)</span></div>
+    </div>
+  </div>
+
+  <!-- MÅNEDLIG -->
+  <div class="section">
+    <div class="section-card monthly">
+      <div class="section-title">🟣 Ca. én gang i måneden</div>
+      <div class="section-sub">Store pakker og tørrvarer som varer lenge</div>
+      <div class="item"><span class="item-name">Rå honning (500g glass)</span><span class="item-amount">holder ~3–4 uker</span></div>
+      <div class="item"><span class="item-name">Olivenolje</span><span class="item-amount">1 flaske</span></div>
+      <div class="item"><span class="item-name">Smør</span><span class="item-amount">1–2 pakker</span></div>
+      <div class="item"><span class="item-name">Salt, pepper, hvitløk, krydder</span><span class="item-amount">ved behov</span></div>
+    </div>
+  </div>
+
+  <!-- ENGANGS -->
+  <div class="section">
+    <div class="section-card monthly">
+      <div class="section-title">⚪ Engangskjøp</div>
+      <div class="section-sub">Kjøp én gang, varer for alltid</div>
+      <div class="item"><span class="item-name">Digital kjøkkenvekt</span><span class="item-amount">Clas Ohlson / Europris / Kitch'n (~150–250 kr)</span></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Estimert kostnad:</strong> Første lørdag (alt inkludert) ~900 kr. Vanlige lørdager (kun ferskvarer) ~600–700 kr. Honning kjøpes på Sunde Gårdsutsalg (Revheimsveien 177) eller planbi.no.
+  </div>
+
+  <div class="footer">
+    Basert på måltidsplanen · Justér mengdene etter hvor mye du faktisk har igjen hjemme
+  </div>
+
+</div>
+</body>
+</html>
